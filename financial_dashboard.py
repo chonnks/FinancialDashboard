@@ -16,6 +16,30 @@ from bokeh.plotting import figure
 from bokeh.layouts import row, column
 from bokeh.models import TextInput, Button, DatePicker, MultiChoice
 
+#function that will allow you to compare two financial dashboards at the same time using tickers
+def LoadData(ticker1, ticker2, start, end):
+    DataFrame1: yf.download(ticker1, start, end)
+    DataFrame2: yf.download(ticker1, start, end)
+    return DataFrame1, DataFrame2
+
+#function that will actually graph the data visually
+def GraphData(data, indicators, sync_axis=None):
+    pass
+
+#function for what will happen to button when clicked
+def OnButtonClick(ticker1, ticker2, start, end, indicators):
+    pass
+
+Stock1Text = TextInput(title = "Stock 1")
+Stock2Text = TextInput(title = "Stock 2")
+
+#allows user to have a range of dates to choose from going from whenever the user is using a code to 2000
+DatePickFrom = DatePicker(title= "Start Date", value = "2020/01/01",
+                            MinDate = "2000/01/01", max_date = dt.datetime.now().strftime("%Y/%M/%D"))
+                            
+
+
+
 
 
 
